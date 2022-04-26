@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Injectable } from '@angular/core';
-@Injectable()
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-add-appointment',
@@ -9,9 +9,19 @@ import { Injectable } from '@angular/core';
 })
 export class AddAppointmentComponent implements OnInit {
 
-  constructor() { }
+  appointmentForm = this.formBuilder.group({
+    start: '',
+    end: '',
+    name: '',
+    description: ''
+  });
 
-  ngOnInit(): void {
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit(): void { }
+
+  onSubmit(): void {
+    console.warn('appontment added', this.appointmentForm.value);
   }
 
 }

@@ -2,24 +2,24 @@
 <div class="addAppointment">
   <h2>Add appointment</h2>
 
-  <form >
+  <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="form-group col-md-6">
         <label for="start">Start time</label>
-        <input class="form-control" type="datetime-local" name="start" value="" required />
+        <input class="form-control" type="datetime-local" formControlName="start" name="start" value="" required />
       </div>
       <div class="form-group col-md-6">
         <label for="duration">End time</label>
-        <input class="form-control" type="datetime-local" name="duration" value="" required />
+        <input class="form-control" type="datetime-local" formControlName="end" name="duration" value="" required />
       </div>
     </div>
     <div class="form-group">
       <label for="name">Name</label>
-      <input class="form-control" type="text" name="name" value="" required />
+      <input class="form-control" type="text" formControlerName="name" name="name" value="" required />
     </div>
     <div class="form-group">
       <label for="description">Description</label>
-      <textarea class="form-control" name="description"></textarea>
+      <textarea class="form-control" formControlName="description" name="description"></textarea>
     </div>
       <input type="submit" class="btn btn-primary" name="submit" value="Add appointment" />
   </form>
