@@ -4,14 +4,14 @@
 
 <p *ngIf="!appointments"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
 
-<table *ngIf="appointments">
+<table class="table" *ngIf="appointments">
     <thead>
         <tr>
             <th>Name</th>
             <th>Description</th>
             <th>Start</th>
             <th>Duration</th>
-            <th></th>
+            <th ></th>
         </tr>
     </thead>
     <tbody>
