@@ -1,1 +1,12 @@
 
+body {
+    width: 35em;
+}
+
+nav {
+    background-color: green;
+}
+
+.loginForm {
+    width: 25em;
+}
