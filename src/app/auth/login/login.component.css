@@ -1,0 +1,12 @@
+.loginSection {
+    width: 25em;
+    margin: 0 auto;
+}
+
+.form-group {
+  padding-bottom: .5em;
+}
+
+#logout {
+    float: right;
+}

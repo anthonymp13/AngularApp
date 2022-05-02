@@ -9,9 +9,14 @@ import { Observable, of } from 'rxjs';
 export class AppointmentService {
 
   private appointmentUrl = "/appointments";
+  private token = sessionStorage.getItem('token');
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders(
+      {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
   };
 
   constructor(private http: HttpClient) { }
@@ -21,7 +26,7 @@ export class AppointmentService {
    *
    */
   getAppointments(): Observable<Appointment[]> {
-    return this.http.get<Appointment[]>(this.appointmentUrl);
+    return this.http.get<Appointment[]>(this.appointmentUrl, this.httpOptions);
   }
 
   /**
@@ -40,7 +45,7 @@ export class AppointmentService {
    */
   deleteAppointment(id: number): Observable<Appointment> {
     const url = `${this.appointmentUrl}/${id}`;
-
+    
     return this.http.delete<Appointment>(url, this.httpOptions);
   }
 
